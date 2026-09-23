@@ -33,6 +33,9 @@ import {
   UserRound,
 } from "lucide-react";
 import aboutImage from "@/assets/about-team.jpg";
+import heroImage from "@/assets/hero-consult.jpg";
+import coupleImage from "@/assets/advisor-couple.jpg";
+import signingImage from "@/assets/signing.jpg";
 
 const WHATSAPP_NUMBER = "60123410525";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
@@ -114,7 +117,8 @@ function Hero() {
       />
 
       <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
-        <div className="max-w-3xl">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-leaf/40 bg-leaf/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-leaf">
             <ShieldCheck className="h-4 w-4" />
             Pinjaman Berlesen • Johor Bahru
@@ -148,6 +152,17 @@ function Hero() {
                 WhatsApp Kami
               </a>
             </Button>
+          </div>
+        </div>
+
+          <div className="relative">
+            <div className="overflow-hidden rounded-3xl border border-deep-foreground/15 shadow-2xl">
+              <img
+                src={heroImage}
+                alt="Perunding Dragon Access berbincang dengan pelanggan di pejabat Johor Bahru"
+                className="h-72 w-full object-cover sm:h-96"
+              />
+            </div>
           </div>
         </div>
 
@@ -337,6 +352,15 @@ function LoanSolutions() {
           </p>
         </div>
 
+        <div className="mt-10 overflow-hidden rounded-2xl border border-border">
+          <img
+            src={coupleImage}
+            alt="Pasangan berbincang mengenai pelan pinjaman di pejabat Dragon Access"
+            className="h-56 w-full object-cover sm:h-72"
+            loading="lazy"
+          />
+        </div>
+
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SOLUTIONS.map((item) => (
             <div
@@ -428,6 +452,15 @@ function Eligibility() {
           <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Mudah Untuk Bermula
           </h2>
+        </div>
+
+        <div className="mt-10 overflow-hidden rounded-2xl border border-border">
+          <img
+            src={signingImage}
+            alt="Pelanggan menandatangani dokumen pinjaman bersama perunding Dragon Access"
+            className="h-56 w-full object-cover sm:h-72"
+            loading="lazy"
+          />
         </div>
 
         <div className="mt-12 grid gap-12 lg:grid-cols-2">
