@@ -124,7 +124,7 @@ function Hero() {
             Pinjaman Berlesen • Johor Bahru
           </div>
 
-          <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="mt-6 font-display text-3xl font-semibold leading-[1.15] tracking-tight sm:text-4xl lg:text-5xl">
             Lebih 25 Tahun Berpengalaman di Johor Bahru, Menyediakan Pinjaman
             Berlesen Yang Dipercayai
           </h1>
