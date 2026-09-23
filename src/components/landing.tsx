@@ -152,6 +152,17 @@ function Hero() {
           </div>
         </div>
 
+          <div className="relative">
+            <div className="overflow-hidden rounded-3xl border border-deep-foreground/15 shadow-2xl">
+              <img
+                src={heroImage}
+                alt="Perunding Dragon Access berbincang dengan pelanggan di pejabat Johor Bahru"
+                className="h-72 w-full object-cover sm:h-96"
+              />
+            </div>
+          </div>
+        </div>
+
         <div className="mt-16 grid grid-cols-1 gap-6 border-t border-deep-foreground/15 pt-8 sm:grid-cols-3">
           {[
             { value: "25+", label: "Tahun Pengalaman" },
