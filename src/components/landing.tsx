@@ -337,6 +337,15 @@ function LoanSolutions() {
           </p>
         </div>
 
+        <div className="mt-10 overflow-hidden rounded-2xl border border-border">
+          <img
+            src={coupleImage}
+            alt="Pasangan berbincang mengenai pelan pinjaman di pejabat Dragon Access"
+            className="h-56 w-full object-cover sm:h-72"
+            loading="lazy"
+          />
+        </div>
+
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SOLUTIONS.map((item) => (
             <div
