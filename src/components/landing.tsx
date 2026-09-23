@@ -430,6 +430,15 @@ function Eligibility() {
           </h2>
         </div>
 
+        <div className="mt-10 overflow-hidden rounded-2xl border border-border">
+          <img
+            src={signingImage}
+            alt="Pelanggan menandatangani dokumen pinjaman bersama perunding Dragon Access"
+            className="h-56 w-full object-cover sm:h-72"
+            loading="lazy"
+          />
+        </div>
+
         <div className="mt-12 grid gap-12 lg:grid-cols-2">
           <div>
             <h3 className="font-display text-xl font-semibold text-foreground">
