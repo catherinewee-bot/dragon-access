@@ -600,19 +600,22 @@ function PaymentSchedule() {
                 RM {fmt(amount)}
               </div>
               <div className="mt-3 flex flex-wrap gap-2">
-                {AMOUNT_OPTIONS.map((a) => (
-                  <button
-                    key={a}
-                    onClick={() => setAmount(a)}
-                    className={
-                      a === amount
-                        ? "rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground"
-                        : "rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
-                    }
-                  >
-                    {a.toLocaleString("ms-MY")}
-                  </button>
-                ))}
+                {AMOUNT_OPTIONS.map((opt) => {
+                  const value = Number(opt.value);
+                  return (
+                    <button
+                      key={opt.value}
+                      onClick={() => setAmount(value)}
+                      className={
+                        value === amount
+                          ? "rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground"
+                          : "rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+                      }
+                    >
+                      {opt.label}
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
