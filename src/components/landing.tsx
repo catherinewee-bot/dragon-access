@@ -33,6 +33,9 @@ import {
   UserRound,
 } from "lucide-react";
 import aboutImage from "@/assets/about-team.jpg";
+import heroImage from "@/assets/hero-consult.jpg";
+import coupleImage from "@/assets/advisor-couple.jpg";
+import signingImage from "@/assets/signing.jpg";
 
 const WHATSAPP_NUMBER = "60123410525";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
