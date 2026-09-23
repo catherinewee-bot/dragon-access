@@ -114,7 +114,8 @@ function Hero() {
       />
 
       <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
-        <div className="max-w-3xl">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-leaf/40 bg-leaf/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-leaf">
             <ShieldCheck className="h-4 w-4" />
             Pinjaman Berlesen • Johor Bahru
