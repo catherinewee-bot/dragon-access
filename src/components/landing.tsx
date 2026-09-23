@@ -636,26 +636,42 @@ function PaymentSchedule() {
               </div>
             </div>
 
-            <div className="mt-7 grid grid-cols-3 gap-3 rounded-xl bg-secondary/70 p-5 text-center">
-              <div>
-                <div className="text-xs text-muted-foreground">Bayaran Bulanan</div>
-                <div className="mt-1 font-display text-lg font-semibold text-primary sm:text-xl">
-                  RM {fmt(monthly)}
-                </div>
-              </div>
-              <div className="border-x border-border">
-                <div className="text-xs text-muted-foreground">Jumlah Faedah</div>
-                <div className="mt-1 font-display text-lg font-semibold text-foreground sm:text-xl">
-                  RM {fmt(interest)}
-                </div>
-              </div>
-              <div>
-                <div className="text-xs text-muted-foreground">Jumlah Bayaran</div>
-                <div className="mt-1 font-display text-lg font-semibold text-foreground sm:text-xl">
-                  RM {fmt(total)}
-                </div>
-              </div>
-            </div>
+            <table className="mt-7 w-full overflow-hidden rounded-xl border border-border text-left">
+              <thead>
+                <tr className="bg-secondary/70">
+                  <th className="px-4 py-3 text-xs font-medium text-muted-foreground">
+                    Butiran
+                  </th>
+                  <th className="px-4 py-3 text-right text-xs font-medium text-muted-foreground">
+                    Jumlah
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { label: "Bayaran Bulanan", value: fmt(monthly), highlight: true },
+                  { label: "Jumlah Faedah", value: fmt(interest) },
+                  { label: "Jumlah Bayaran", value: fmt(total) },
+                ].map((row, i) => (
+                  <tr
+                    key={row.label}
+                    className={i > 0 ? "border-t border-border" : undefined}
+                  >
+                    <td className="px-4 py-3 text-sm text-muted-foreground">
+                      {row.label}
+                    </td>
+                    <td
+                      className={
+                        "px-4 py-3 text-right font-display text-sm font-semibold sm:text-base " +
+                        (row.highlight ? "text-primary" : "text-foreground")
+                      }
+                    >
+                      RM {row.value}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
