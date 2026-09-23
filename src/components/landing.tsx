@@ -599,19 +599,20 @@ function PaymentSchedule() {
               <div className="mt-2 font-display text-3xl font-semibold text-primary">
                 RM {fmt(amount)}
               </div>
-              <input
-                type="range"
-                min={5000}
-                max={100000}
-                step={5000}
-                value={amount}
-                onChange={(e) => setAmount(Number(e.target.value))}
-                className="mt-3 w-full accent-[var(--color-primary)]"
-                aria-label="Jumlah pinjaman"
-              />
-              <div className="mt-1 flex justify-between text-xs text-muted-foreground">
-                <span>RM 5,000</span>
-                <span>RM 100,000</span>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {AMOUNT_OPTIONS.map((a) => (
+                  <button
+                    key={a}
+                    onClick={() => setAmount(a)}
+                    className={
+                      a === amount
+                        ? "rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground"
+                        : "rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+                    }
+                  >
+                    {a.toLocaleString("ms-MY")}
+                  </button>
+                ))}
               </div>
             </div>
 
