@@ -1012,6 +1012,26 @@ function Footer() {
   );
 }
 
+/* ---------------- Floating WhatsApp ---------------- */
+
+function FloatingWhatsApp() {
+  return (
+    <a
+      href={WHATSAPP_LINK}
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Hubungi kami melalui WhatsApp"
+      className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-leaf text-primary-foreground shadow-lg transition-transform hover:scale-105 hover:bg-leaf/90 active:scale-95 sm:bottom-6 sm:right-6"
+    >
+      <span
+        className="absolute inline-flex h-full w-full animate-ping rounded-full bg-leaf/40"
+        aria-hidden="true"
+      />
+      <MessageCircle className="relative h-7 w-7" />
+    </a>
+  );
+}
+
 /* ---------------- Page ---------------- */
 
 export function LandingPage() {
@@ -1029,6 +1049,7 @@ export function LandingPage() {
         <ApplicationForm />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }
