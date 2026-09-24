@@ -564,7 +564,7 @@ function PaymentSchedule() {
           </h2>
         </div>
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1.4fr]">
+        <div className="mt-10 grid min-w-0 gap-6 lg:grid-cols-[1fr_1.4fr]">
           <div className="rounded-2xl bg-deep p-7 text-deep-foreground">
             <h3 className="font-display text-xl font-semibold">Kadar & Tempoh</h3>
             <dl className="mt-6 space-y-5">
@@ -595,7 +595,7 @@ function PaymentSchedule() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-7">
+          <div className="min-w-0 rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-7">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <h3 className="font-display text-xl font-semibold text-foreground">
                 Jadual Bayaran Bulanan
@@ -607,7 +607,7 @@ function PaymentSchedule() {
 
             <div
               ref={tableScrollerRef}
-              className="mt-6 overflow-x-auto"
+              className="mt-6 w-full max-w-full overflow-x-auto"
               onScroll={updateTableScroll}
             >
               <table className="w-full min-w-[560px] overflow-hidden rounded-xl border border-border text-left">
