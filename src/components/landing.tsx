@@ -548,7 +548,7 @@ function PaymentSchedule() {
           </h2>
         </div>
 
-        <div className="mt-10 grid min-w-0 gap-6 lg:grid-cols-[1fr_1.4fr]">
+        <div className="mt-10 grid min-w-0 gap-6 lg:grid-cols-[1fr_2fr]">
           <div className="rounded-2xl bg-deep p-7 text-deep-foreground">
             <h3 className="font-display text-xl font-semibold">Kadar & Tempoh</h3>
             <dl className="mt-6 space-y-5">
