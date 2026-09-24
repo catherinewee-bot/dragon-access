@@ -16,7 +16,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import {
-  ArrowLeftRight,
   BadgeCheck,
   Car,
   CheckCircle2,
@@ -530,27 +529,12 @@ const RATE_MONTHLY = 0.015;
 const TERMS = [6, 12, 24, 36, 60];
 
 function PaymentSchedule() {
-  const tableScrollerRef = useRef<HTMLDivElement>(null);
-  const [tableScroll, setTableScroll] = useState(0);
   const fmt = (n: number) =>
     n.toLocaleString("ms-MY", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
 
   const monthlyFor = (amount: number, term: number) =>
     (amount + amount * RATE_MONTHLY * term) / term;
 
-  const updateTableScroll = () => {
-    const scroller = tableScrollerRef.current;
-    if (!scroller) return;
-    const scrollableWidth = scroller.scrollWidth - scroller.clientWidth;
-    setTableScroll(scrollableWidth ? (scroller.scrollLeft / scrollableWidth) * 100 : 0);
-  };
-
-  const slideTable = (value: number) => {
-    const scroller = tableScrollerRef.current;
-    if (!scroller) return;
-    scroller.scrollLeft = ((scroller.scrollWidth - scroller.clientWidth) * value) / 100;
-    setTableScroll(value);
-  };
 
   return (
     <section id="jadual" className="scroll-mt-20 bg-background py-20 sm:py-24">
@@ -605,12 +589,9 @@ function PaymentSchedule() {
               </span>
             </div>
 
-            <div
-              ref={tableScrollerRef}
-              className="mt-6 w-full max-w-full overflow-x-auto"
-              onScroll={updateTableScroll}
-            >
+            <div className="mt-6 w-full max-w-full overflow-x-auto">
               <table className="w-full min-w-[560px] overflow-hidden rounded-xl border border-border text-left">
+
                 <thead>
                   <tr className="bg-secondary/70">
                     <th className="px-3 py-3 text-xs font-medium text-muted-foreground sm:px-4">
@@ -656,24 +637,8 @@ function PaymentSchedule() {
               </table>
             </div>
 
-            <div className="mt-4 sm:hidden">
-              <div className="mb-1.5 flex items-center gap-2 text-xs text-muted-foreground">
-                <ArrowLeftRight className="size-4 shrink-0" aria-hidden="true" />
-                <span>Geser bar untuk melihat semua tempoh</span>
-              </div>
-              <input
-                type="range"
-                min="0"
-                max="100"
-                step="1"
-                value={tableScroll}
-                onChange={(event) => slideTable(Number(event.target.value))}
-                aria-label="Geser jadual bayaran ke kiri atau kanan"
-                className="h-11 w-full cursor-ew-resize accent-primary"
-              />
-            </div>
-
             <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
+
               Setiap angka menunjukkan bayaran bulanan berdasarkan kadar faedah
               rata 1.5% sebulan untuk jumlah pinjaman dan tempoh berkenaan.
               Pengiraan sebenar tertakluk kepada penilaian kredit dan kelulusan.
