@@ -787,8 +787,8 @@ function ApplicationForm() {
               {
                 icon: Mail,
                 label: "Emel",
-                value: "zhenlon933@gmail.com",
-                href: "mailto:zhenlon933@gmail.com",
+                value: "support@pinjamanjohorbahru.com",
+                href: "mailto:support@pinjamanjohorbahru.com",
               },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-4">
@@ -968,8 +968,8 @@ function Footer() {
               </li>
               <li className="flex gap-2.5">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0" />
-                <a href="mailto:zhenlon933@gmail.com" className="hover:text-leaf">
-                  zhenlon933@gmail.com
+                <a href="mailto:support@pinjamanjohorbahru.com" className="hover:text-leaf">
+                  support@pinjamanjohorbahru.com
                 </a>
               </li>
             </ul>
