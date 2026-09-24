@@ -578,100 +578,68 @@ function PaymentSchedule() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-border bg-card p-7 shadow-sm">
+          <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-7">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <h3 className="font-display text-xl font-semibold text-foreground">
-                Simulasi Pembayaran
+                Jadual Bayaran Bulanan
               </h3>
               <span className="text-xs text-muted-foreground">
                 Contoh pengiraan sahaja
               </span>
             </div>
 
-            <div className="mt-6">
-              <Label className="text-sm text-muted-foreground">
-                Jumlah Pinjaman
-              </Label>
-              <div className="mt-2 font-display text-3xl font-semibold text-primary">
-                RM {fmt(amount)}
-              </div>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {AMOUNT_OPTIONS.map((opt) => {
-                  const value = Number(opt.value);
-                  return (
-                    <button
-                      key={opt.value}
-                      onClick={() => setAmount(value)}
-                      className={
-                        value === amount
-                          ? "rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground"
-                          : "rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
-                      }
-                    >
-                      {opt.label}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div className="mt-6">
-              <Label className="text-sm text-muted-foreground">
-                Tempoh Bayaran (Bulan)
-              </Label>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {TERMS.map((t) => (
-                  <button
-                    key={t}
-                    onClick={() => setTerm(t)}
-                    className={
-                      t === term
-                        ? "rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground"
-                        : "rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
-                    }
-                  >
-                    {t}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <table className="mt-7 w-full overflow-hidden rounded-xl border border-border text-left">
-              <thead>
-                <tr className="bg-secondary/70">
-                  <th className="px-4 py-3 text-xs font-medium text-muted-foreground">
-                    Butiran
-                  </th>
-                  <th className="px-4 py-3 text-right text-xs font-medium text-muted-foreground">
-                    Jumlah
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { label: "Bayaran Bulanan", value: fmt(monthly), highlight: true },
-                  { label: "Jumlah Faedah", value: fmt(interest) },
-                  { label: "Jumlah Bayaran", value: fmt(total) },
-                ].map((row, i) => (
-                  <tr
-                    key={row.label}
-                    className={i > 0 ? "border-t border-border" : undefined}
-                  >
-                    <td className="px-4 py-3 text-sm text-muted-foreground">
-                      {row.label}
-                    </td>
-                    <td
-                      className={
-                        "px-4 py-3 text-right font-display text-sm font-semibold sm:text-base " +
-                        (row.highlight ? "text-primary" : "text-foreground")
-                      }
-                    >
-                      RM {row.value}
-                    </td>
+            <div className="mt-6 overflow-x-auto">
+              <table className="w-full min-w-[560px] overflow-hidden rounded-xl border border-border text-left">
+                <thead>
+                  <tr className="bg-secondary/70">
+                    <th className="px-3 py-3 text-xs font-medium text-muted-foreground sm:px-4">
+                      Jumlah Pinjaman
+                    </th>
+                    {TERMS.map((t) => (
+                      <th
+                        key={t}
+                        className="px-3 py-3 text-right text-xs font-medium text-muted-foreground sm:px-4"
+                      >
+                        {t} Bulan
+                      </th>
+                    ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {AMOUNT_OPTIONS.map((opt, i) => {
+                    const value = Number(opt.value);
+                    return (
+                      <tr
+                        key={opt.value}
+                        className={
+                          i > 0
+                            ? "border-t border-border transition-colors hover:bg-secondary/50"
+                            : "transition-colors hover:bg-secondary/50"
+                        }
+                      >
+                        <td className="px-3 py-3 font-display text-sm font-semibold text-foreground sm:px-4">
+                          {opt.label}
+                        </td>
+                        {TERMS.map((t) => (
+                          <td
+                            key={t}
+                            className="px-3 py-3 text-right text-sm text-muted-foreground tabular-nums sm:px-4"
+                          >
+                            RM {fmt(monthlyFor(value, t))}
+                          </td>
+                        ))}
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
+              Setiap angka menunjukkan bayaran bulanan berdasarkan kadar faedah
+              rata 1.5% sebulan untuk jumlah pinjaman dan tempoh berkenaan.
+              Pengiraan sebenar tertakluk kepada penilaian kredit dan kelulusan.
+            </p>
           </div>
         </div>
       </div>
