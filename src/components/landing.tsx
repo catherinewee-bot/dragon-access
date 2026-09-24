@@ -996,9 +996,12 @@ function Footer() {
             © {new Date().getFullYear()} DRAGON ACCESS SDN. BHD. Hak cipta
             terpelihara.
           </span>
-          <span className="flex items-center gap-1.5">
-            <BadgeCheck className="h-3.5 w-3.5" />
-            Syarikat pembiayaan berlesen
+          <span className="flex flex-wrap items-center gap-1.5">
+            <BadgeCheck className="h-3.5 w-3.5 shrink-0" />
+            <span>Syarikat pembiayaan berlesen</span>
+            <span className="text-deep-foreground/70">
+              No. Lesen: WL3135/01/01-12/250828
+            </span>
           </span>
         </div>
       </div>
