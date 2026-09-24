@@ -1,5 +1,7 @@
 # Green Bloom Landing
 
+Cloudfare deployment test
+
 There’s no logo, just put the company name. Can use green, it would be more suitable for the Malay market. Based on the copywriting,  design a landing page
 
 This project was built with [Lovable](https://lovable.dev).
