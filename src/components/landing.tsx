@@ -623,7 +623,7 @@ function PaymentSchedule() {
                         {TERMS.map((t) => (
                           <td
                             key={t}
-                            className="px-3 py-3 text-right text-sm text-muted-foreground tabular-nums sm:px-4"
+                            className="whitespace-nowrap px-3 py-3 text-right text-sm text-muted-foreground tabular-nums sm:px-4"
                           >
                             RM {fmt(monthlyFor(value, t))}
                           </td>
