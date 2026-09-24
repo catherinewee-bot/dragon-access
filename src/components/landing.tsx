@@ -529,15 +529,11 @@ const RATE_MONTHLY = 0.015;
 const TERMS = [6, 12, 24, 36, 60];
 
 function PaymentSchedule() {
-  const [amount, setAmount] = useState(10000);
-  const [term, setTerm] = useState(12);
-
-  const interest = amount * RATE_MONTHLY * term;
-  const total = amount + interest;
-  const monthly = total / term;
-
   const fmt = (n: number) =>
     n.toLocaleString("ms-MY", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
+
+  const monthlyFor = (amount: number, term: number) =>
+    (amount + amount * RATE_MONTHLY * term) / term;
 
   return (
     <section id="jadual" className="scroll-mt-20 bg-background py-20 sm:py-24">
