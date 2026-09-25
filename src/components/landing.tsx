@@ -153,6 +153,11 @@ function Hero() {
               </a>
             </Button>
           </div>
+
+          <p className="mt-6 max-w-2xl text-xs leading-relaxed text-deep-foreground/60">
+            *Tidak menerima pemohon yang menerima gaji secara tunai, bekerja
+            sendiri (self-employed) atau daripada golongan OKU.
+          </p>
         </div>
 
           <div className="relative">
@@ -918,7 +923,12 @@ function ApplicationForm() {
             Hantar Pertanyaan Melalui WhatsApp
           </Button>
 
-          <p className="mt-4 text-center text-xs leading-relaxed text-muted-foreground">
+          <p className="mt-5 text-center text-xs leading-relaxed text-destructive">
+            *Tidak menerima pemohon yang menerima gaji secara tunai, bekerja
+            sendiri (self-employed) atau daripada golongan OKU.
+          </p>
+
+          <p className="mt-3 text-center text-xs leading-relaxed text-muted-foreground">
             Maklumat yang diberikan akan digunakan untuk tujuan semakan dan
             diuruskan mengikut dasar privasi kami.
           </p>
